@@ -38,6 +38,9 @@ jobs:
       - name: Build
         run: cargo build --all --verbose
 
+      - name: Test
+        run: cargo test
+
   build-msvc-rebuild-lib:
     runs-on: windows-2019
     steps:
@@ -51,7 +54,7 @@ jobs:
           default: true
           override: true
 
-      - name: Set up Visual Studio build environment variables and paths 
+      - name: Set up Visual Studio build environment variables and paths
         uses: seanmiddleditch/gha-setup-vsdevenv@v4
 
       - name: Invalidate res/eventmsgs.rs
